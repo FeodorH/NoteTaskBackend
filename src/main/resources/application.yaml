@@ -1,6 +1,23 @@
+server:
+  port: 8080
+
 spring:
   application:
     name: NoteTaskBackend
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when-authorized
+
+logging:
+  level:
+    org.example.notetaskbackend: DEBUG
+    org.springframework.security: INFO
 
 reactor:
   schedulers:
