@@ -1,3 +1,6 @@
+app:
+  api-key: dev-key-local-only
+
 logging:
   level:
-    org.example.notetaskbackend: DEBUG
+    org.example.notetaskbackend: TRACE
