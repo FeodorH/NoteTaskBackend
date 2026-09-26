@@ -21,8 +21,8 @@ public class GigaChatCompletionClient {
     WebClient webClient;
     GigaChatProperties properties;
 
-    GigaChatCompletionClient(@Qualifier("gigaChatWebClient") WebClient webClient,
-                             GigaChatProperties properties){
+    public GigaChatCompletionClient(@Qualifier("gigaChatWebClient") WebClient webClient,
+                                    GigaChatProperties properties){
         this.webClient = webClient;
         this.properties = properties;
     }

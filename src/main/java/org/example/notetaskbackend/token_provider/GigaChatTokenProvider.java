@@ -13,6 +13,7 @@ public class GigaChatTokenProvider {
 
     private final GigaChatAuthClient authClient;
     private final AtomicReference<CachedToken> cache = new AtomicReference<>(); // Атомарный кеш
+    private final AtomicReference<Mono<String>> inFlight = new AtomicReference<>(); // Временный кеш для обновления в полёте
 
     public GigaChatTokenProvider(GigaChatAuthClient authClient) {
         this.authClient = authClient;
@@ -26,9 +27,9 @@ public class GigaChatTokenProvider {
 
         // Для избежания параллельного запроса 2-х токенов и гонки в кеше
         return Mono.defer(() -> {
-            CachedToken existing = cache.get();
-            if (existing != null && existing.isValid()) {
-                return Mono.just(existing.token());
+            Mono<String> existing = inFlight.get();
+            if (existing != null) {
+                return existing;
             }
 
             Mono<String> fresh = authClient.requestToken()
@@ -36,13 +37,20 @@ public class GigaChatTokenProvider {
                         Instant expiresAt = Instant.now().plusSeconds(resp.expiresIn());
                         CachedToken cached = new CachedToken(resp.accessToken(), expiresAt);
                         cache.set(cached);
+                        inFlight.set(null);
                         log.info("GigaChat token cached, expires at {}", expiresAt);
                         return resp.accessToken();
                     })
-                    .doOnError(e -> log.error("Token fetch failed", e))
-                    .cache();   // ← ключевая строка
+                    .doOnError(e -> {
+                        inFlight.set(null);
+                        log.error("Token fetch failed", e);
+                    })
+                    .cache();
 
-            return fresh;
+            if (inFlight.compareAndSet(null, fresh)) {
+                return fresh;
+            }
+            return inFlight.get();
         });
     }
 
