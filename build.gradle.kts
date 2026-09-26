@@ -26,7 +26,7 @@ dependencies {
     // Actuator (healthcheck для Docker)
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
-    // Безопасность (настроим позже через SecurityConfig)
+    // Безопасность
     implementation("org.springframework.boot:spring-boot-starter-security")
 
     // Валидация DTO

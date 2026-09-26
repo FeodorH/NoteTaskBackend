@@ -1,33 +1,19 @@
-2026-09-25T14:47:12.185+03:00  INFO 8751 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Starting NoteTaskBackendApplication using Java 21.0.12 with PID 8751 (/home/feodor/projects/NoteTaskBackend/build/classes/java/main started by feodor in /home/feodor/projects/NoteTaskBackend)
-2026-09-25T14:47:12.186+03:00 DEBUG 8751 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Running with Spring Boot v3.3.0, Spring v6.1.8
-2026-09-25T14:47:12.187+03:00  INFO 8751 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : The following 2 profiles are active: "dev", "secret"
-2026-09-25T14:47:12.231+03:00  INFO 8751 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-09-25T14:47:12.231+03:00  INFO 8751 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-09-25T14:47:13.749+03:00  INFO 8751 --- [NoteTaskBackend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
-2026-09-25T14:47:13.878+03:00  INFO 8751 --- [NoteTaskBackend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-09-25T14:47:13.979+03:00  INFO 8751 --- [NoteTaskBackend] [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
-2026-09-25T14:47:13.988+03:00  INFO 8751 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Started NoteTaskBackendApplication in 2.17 seconds (process running for 2.49)
-2026-09-25T14:47:49.321+03:00  WARN 8751 --- [NoteTaskBackend] [reactor-http-epoll-2] o.e.n.e.GlobalExceptionHandler           : Validation failed: prompt: Prompt must been not null!
-2026-09-25T14:48:04.758+03:00  INFO 8751 --- [NoteTaskBackend] [reactor-http-epoll-2] o.e.n.auth_client.GigaChatAuthClient     : GigaChat token obtained, expires in 1790338686925s
-2026-09-25T14:48:04.759+03:00  INFO 8751 --- [NoteTaskBackend] [reactor-http-epoll-2] o.e.n.t.GigaChatTokenProvider            : GigaChat token cached, expires at +58760-04-23T01:43:29.758947343Z
-2026-09-25T14:57:16.194+03:00  INFO 9652 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Starting NoteTaskBackendApplication using Java 21.0.12 with PID 9652 (/home/feodor/projects/NoteTaskBackend/build/classes/java/main started by feodor in /home/feodor/projects/NoteTaskBackend)
-2026-09-25T14:57:16.195+03:00 DEBUG 9652 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Running with Spring Boot v3.3.0, Spring v6.1.8
-2026-09-25T14:57:16.195+03:00  INFO 9652 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : The following 2 profiles are active: "dev", "secret"
-2026-09-25T14:57:16.242+03:00  INFO 9652 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-09-25T14:57:16.243+03:00  INFO 9652 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-09-25T14:57:17.915+03:00  INFO 9652 --- [NoteTaskBackend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
-2026-09-25T14:57:18.056+03:00  INFO 9652 --- [NoteTaskBackend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-09-25T14:57:18.185+03:00  INFO 9652 --- [NoteTaskBackend] [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
-2026-09-25T14:57:18.193+03:00  INFO 9652 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Started NoteTaskBackendApplication in 2.358 seconds (process running for 2.922)
-2026-09-25T14:57:28.953+03:00 DEBUG 9652 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
-2026-09-25T14:57:28.955+03:00 DEBUG 9652 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/health'
-2026-09-25T14:57:28.959+03:00 DEBUG 9652 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
-2026-09-25T14:57:28.960+03:00 DEBUG 9652 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/health/**'
-2026-09-25T14:57:28.961+03:00 DEBUG 9652 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2026-09-25T14:57:28.962+03:00 DEBUG 9652 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
-2026-09-25T14:57:28.963+03:00 DEBUG 9652 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/**'
-2026-09-25T14:57:28.963+03:00 DEBUG 9652 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2026-09-25T14:57:28.965+03:00 DEBUG 9652 --- [NoteTaskBackend] [parallel-1] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/v1/generate' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@18ae0d74
-2026-09-25T14:57:28.973+03:00 DEBUG 9652 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
-2026-09-25T14:57:30.735+03:00  INFO 9652 --- [NoteTaskBackend] [reactor-http-epoll-2] o.e.n.auth_client.GigaChatAuthClient     : GigaChat token obtained, expires in 1790339250817s
-2026-09-25T14:57:30.737+03:00  INFO 9652 --- [NoteTaskBackend] [reactor-http-epoll-2] o.e.n.t.GigaChatTokenProvider            : GigaChat token cached, expires at +58760-04-29T14:31:07.736856762Z
+2026-09-26T14:21:58.330+03:00  INFO 13321 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Starting NoteTaskBackendApplication using Java 21.0.12 with PID 13321 (/home/feodor/projects/NoteTaskBackend/build/classes/java/main started by feodor in /home/feodor/projects/NoteTaskBackend)
+2026-09-26T14:21:58.341+03:00 DEBUG 13321 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Running with Spring Boot v3.3.0, Spring v6.1.8
+2026-09-26T14:21:58.341+03:00  INFO 13321 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : The following 2 profiles are active: "dev", "secret"
+2026-09-26T14:21:58.431+03:00  INFO 13321 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-26T14:21:58.431+03:00  INFO 13321 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-26T14:22:01.455+03:00  INFO 13321 --- [NoteTaskBackend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2026-09-26T14:22:01.707+03:00  INFO 13321 --- [NoteTaskBackend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-09-26T14:22:02.087+03:00  INFO 13321 --- [NoteTaskBackend] [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2026-09-26T14:22:02.097+03:00  INFO 13321 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Started NoteTaskBackendApplication in 4.783 seconds (process running for 5.518)
+2026-09-26T14:22:05.935+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-09-26T14:22:05.937+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/metrics' doesn't match 'null /actuator/health'
+2026-09-26T14:22:05.950+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-09-26T14:22:05.951+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/metrics' doesn't match 'null /actuator/health/**'
+2026-09-26T14:22:05.951+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-09-26T14:22:05.952+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-09-26T14:22:05.952+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Checking match of request : '/actuator/metrics'; against '/actuator/**'
+2026-09-26T14:22:05.953+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : matched
+2026-09-26T14:22:05.953+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/actuator/metrics' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@7ab83de8
+2026-09-26T14:22:05.974+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
