@@ -1,19 +1,203 @@
-2026-09-26T14:21:58.330+03:00  INFO 13321 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Starting NoteTaskBackendApplication using Java 21.0.12 with PID 13321 (/home/feodor/projects/NoteTaskBackend/build/classes/java/main started by feodor in /home/feodor/projects/NoteTaskBackend)
-2026-09-26T14:21:58.341+03:00 DEBUG 13321 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Running with Spring Boot v3.3.0, Spring v6.1.8
-2026-09-26T14:21:58.341+03:00  INFO 13321 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : The following 2 profiles are active: "dev", "secret"
-2026-09-26T14:21:58.431+03:00  INFO 13321 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-09-26T14:21:58.431+03:00  INFO 13321 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-09-26T14:22:01.455+03:00  INFO 13321 --- [NoteTaskBackend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
-2026-09-26T14:22:01.707+03:00  INFO 13321 --- [NoteTaskBackend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-09-26T14:22:02.087+03:00  INFO 13321 --- [NoteTaskBackend] [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
-2026-09-26T14:22:02.097+03:00  INFO 13321 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Started NoteTaskBackendApplication in 4.783 seconds (process running for 5.518)
-2026-09-26T14:22:05.935+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
-2026-09-26T14:22:05.937+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/metrics' doesn't match 'null /actuator/health'
-2026-09-26T14:22:05.950+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
-2026-09-26T14:22:05.951+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/metrics' doesn't match 'null /actuator/health/**'
-2026-09-26T14:22:05.951+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
-2026-09-26T14:22:05.952+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
-2026-09-26T14:22:05.952+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Checking match of request : '/actuator/metrics'; against '/actuator/**'
-2026-09-26T14:22:05.953+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : matched
-2026-09-26T14:22:05.953+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/actuator/metrics' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@7ab83de8
-2026-09-26T14:22:05.974+03:00 DEBUG 13321 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
+2026-09-29T16:00:31.444+03:00  INFO 3323 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Starting NoteTaskBackendApplication using Java 21.0.12 with PID 3323 (/home/feodor/projects/NoteTaskBackend/build/classes/java/main started by feodor in /home/feodor/projects/NoteTaskBackend)
+2026-09-29T16:00:31.458+03:00 DEBUG 3323 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Running with Spring Boot v3.3.0, Spring v6.1.8
+2026-09-29T16:00:31.459+03:00  INFO 3323 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : The following 2 profiles are active: "prod", "secret"
+2026-09-29T16:00:31.544+03:00  INFO 3323 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-29T16:00:31.545+03:00  INFO 3323 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-29T16:00:34.592+03:00  INFO 3323 --- [NoteTaskBackend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2026-09-29T16:00:34.801+03:00  INFO 3323 --- [NoteTaskBackend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-09-29T16:00:34.976+03:00  INFO 3323 --- [NoteTaskBackend] [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8001 (http)
+2026-09-29T16:00:34.991+03:00  INFO 3323 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Started NoteTaskBackendApplication in 7.558 seconds (process running for 4.908)
+2026-09-29T16:02:27.635+03:00 DEBUG 3323 --- [NoteTaskBackend] [reactor-http-epoll-2] o.s.s.w.s.a.AuthenticationWebFilter      : Authentication failed: Invalid API key
+
+org.springframework.security.authentication.BadCredentialsException: Invalid API key
+	at org.example.notetaskbackend.security.ApiKeyAuthenticationManager.authenticate(ApiKeyAuthenticationManager.java:29) ~[main/:na]
+	at org.springframework.security.web.server.authentication.AuthenticationWebFilter.lambda$authenticate$5(AuthenticationWebFilter.java:122) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at reactor.core.publisher.FluxFlatMap.trySubscribeScalarMap(FluxFlatMap.java:153) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap.subscribeOrReturn(MonoFlatMap.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:63) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:158) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onNext(FluxFilterFuseable.java:118) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2571) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.request(FluxFilterFuseable.java:191) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.request(MonoFlatMap.java:194) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:2367) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:2241) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onSubscribe(MonoFlatMap.java:117) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onSubscribe(FluxFilterFuseable.java:87) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:55) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondComplete(MonoFlatMap.java:245) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapInner.onNext(MonoFlatMap.java:305) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoCollectList$MonoCollectListSubscriber.onComplete(MonoCollectList.java:118) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.fastPath(FluxIterable.java:424) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.request(FluxIterable.java:291) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$BaseFluxToMonoOperator.request(Operators.java:2067) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapInner.onSubscribe(MonoFlatMap.java:291) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$BaseFluxToMonoOperator.onSubscribe(Operators.java:2051) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:201) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFromFluxOperator.subscribe(MonoFromFluxOperator.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterWhen$FluxFilterWhenSubscriber.drain(FluxFilterWhen.java:302) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterWhen$FluxFilterWhenSubscriber.onNext(FluxFilterWhen.java:140) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.slowPath(FluxIterable.java:335) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.request(FluxIterable.java:294) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterWhen$FluxFilterWhenSubscriber.onSubscribe(FluxFilterWhen.java:200) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:201) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4568) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.netty.http.server.HttpServer$HttpServerHandle.onStateChange(HttpServer.java:1176) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+	at reactor.netty.ReactorNetty$CompositeConnectionObserver.onStateChange(ReactorNetty.java:710) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+	at reactor.netty.transport.ServerTransport$ChildObserver.onStateChange(ServerTransport.java:481) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+	at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:652) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:240) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.epoll.AbstractEpollStreamChannel$EpollStreamUnsafe.epollInReady(AbstractEpollStreamChannel.java:799) ~[netty-transport-classes-epoll-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:501) ~[netty-transport-classes-epoll-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:399) ~[netty-transport-classes-epoll-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2026-09-29T16:03:03.229+03:00 DEBUG 3323 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-09-29T16:03:03.233+03:00 DEBUG 3323 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Checking match of request : '/actuator/health'; against '/actuator/health'
+2026-09-29T16:03:03.291+03:00 DEBUG 3323 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-09-29T16:03:03.291+03:00 DEBUG 3323 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Checking match of request : '/actuator/health'; against '/actuator/health/**'
+2026-09-29T16:03:03.292+03:00 DEBUG 3323 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : matched
+2026-09-29T16:03:03.293+03:00 DEBUG 3323 --- [NoteTaskBackend] [parallel-1] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/actuator/health' using org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access$$Lambda/0x000077e41c4e65c8@5f104148
+2026-09-29T16:03:03.294+03:00 DEBUG 3323 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
+2026-09-29T16:03:03.356+03:00 DEBUG 3323 --- [NoteTaskBackend] [parallel-1] ebSessionServerSecurityContextRepository : No SecurityContext found in WebSession: 'org.springframework.web.server.session.InMemoryWebSessionStore$InMemoryWebSession@785d0aa0'
+2026-09-29T16:03:09.196+03:00 DEBUG 3323 --- [NoteTaskBackend] [reactor-http-epoll-2] o.s.s.w.s.a.AuthenticationWebFilter      : Authentication failed: Invalid API key
+
+org.springframework.security.authentication.BadCredentialsException: Invalid API key
+	at org.example.notetaskbackend.security.ApiKeyAuthenticationManager.authenticate(ApiKeyAuthenticationManager.java:29) ~[main/:na]
+	at org.springframework.security.web.server.authentication.AuthenticationWebFilter.lambda$authenticate$5(AuthenticationWebFilter.java:122) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at reactor.core.publisher.FluxFlatMap.trySubscribeScalarMap(FluxFlatMap.java:153) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap.subscribeOrReturn(MonoFlatMap.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:63) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:158) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onNext(FluxFilterFuseable.java:118) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2571) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.request(FluxFilterFuseable.java:191) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.request(MonoFlatMap.java:194) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:2367) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:2241) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onSubscribe(MonoFlatMap.java:117) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onSubscribe(FluxFilterFuseable.java:87) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:55) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondComplete(MonoFlatMap.java:245) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapInner.onNext(MonoFlatMap.java:305) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoCollectList$MonoCollectListSubscriber.onComplete(MonoCollectList.java:118) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.fastPath(FluxIterable.java:424) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.request(FluxIterable.java:291) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$BaseFluxToMonoOperator.request(Operators.java:2067) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapInner.onSubscribe(MonoFlatMap.java:291) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$BaseFluxToMonoOperator.onSubscribe(Operators.java:2051) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:201) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFromFluxOperator.subscribe(MonoFromFluxOperator.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterWhen$FluxFilterWhenSubscriber.drain(FluxFilterWhen.java:302) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterWhen$FluxFilterWhenSubscriber.onNext(FluxFilterWhen.java:140) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.slowPath(FluxIterable.java:335) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.request(FluxIterable.java:294) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterWhen$FluxFilterWhenSubscriber.onSubscribe(FluxFilterWhen.java:200) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:201) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4568) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.netty.http.server.HttpServer$HttpServerHandle.onStateChange(HttpServer.java:1176) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+	at reactor.netty.ReactorNetty$CompositeConnectionObserver.onStateChange(ReactorNetty.java:710) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+	at reactor.netty.transport.ServerTransport$ChildObserver.onStateChange(ServerTransport.java:481) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+	at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:652) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:240) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:333) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:455) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.epoll.AbstractEpollStreamChannel$EpollStreamUnsafe.epollInReady(AbstractEpollStreamChannel.java:799) ~[netty-transport-classes-epoll-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:501) ~[netty-transport-classes-epoll-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:399) ~[netty-transport-classes-epoll-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+

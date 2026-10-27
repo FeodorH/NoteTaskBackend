@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "org.example"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.1"
 description = "NoteTaskBackend"
 
 java {
@@ -48,4 +48,11 @@ dependencies {
 tasks.withType<Test> {
     useJUnitPlatform()
     jvmArgs("-XX:+EnableDynamicAgentLoading")
+}
+
+tasks.register("printVersion") {
+    description = "print version for jenkins"
+    doLast {
+        println(project.version)
+    }
 }
