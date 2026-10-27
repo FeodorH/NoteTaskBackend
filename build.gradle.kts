@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "org.example"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.1"
 description = "NoteTaskBackend"
 
 java {
@@ -26,7 +26,7 @@ dependencies {
     // Actuator (healthcheck для Docker)
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
-    // Безопасность (настроим позже через SecurityConfig)
+    // Безопасность
     implementation("org.springframework.boot:spring-boot-starter-security")
 
     // Валидация DTO
@@ -40,10 +40,19 @@ dependencies {
     testImplementation("io.projectreactor:reactor-test")
     testImplementation("org.springframework.security:spring-security-test")
     testImplementation("org.springframework.boot:spring-boot-testcontainers")
+    testImplementation("com.squareup.okhttp3:mockwebserver:4.12.0")
     testImplementation("org.testcontainers:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 tasks.withType<Test> {
     useJUnitPlatform()
+    jvmArgs("-XX:+EnableDynamicAgentLoading")
+}
+
+tasks.register("printVersion") {
+    description = "print version for jenkins"
+    doLast {
+        println(project.version)
+    }
 }

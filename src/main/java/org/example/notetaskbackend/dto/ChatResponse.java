@@ -1,6 +1,6 @@
 package org.example.notetaskbackend.dto;
 
-public record ClientResponse(
+public record ChatResponse(
         String response,
         String status
 ) {

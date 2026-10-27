@@ -9,16 +9,26 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info
+        include: health,info,metrics
   endpoint:
     health:
       show-details: when-authorized
 
-logging:
-  level:
-    org.example.notetaskbackend: DEBUG
-    org.springframework.security: INFO
-
 reactor:
   schedulers:
     defaultBoundedElasticOnVirtualThreads: true
+
+gigachat:
+  scope: GIGACHAT_API_PERS
+  auth-url: https://ngw.devices.sberbank.ru:9443
+  auth-path: /api/v2/oauth
+  api-url: https://api.giga.chat
+  completion-path: /v1/chat/completions
+  model: GigaChat-3-Ultra
+
+logging:
+  file:
+    name: logs/notetask.log
+  level:
+    org.example.notetaskbackend: DEBUG
+    org.springframework.security: TRACE

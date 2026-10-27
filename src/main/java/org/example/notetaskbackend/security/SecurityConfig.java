@@ -27,8 +27,8 @@ public class SecurityConfig {
                 .formLogin(ServerHttpSecurity.FormLoginSpec::disable)
                 .logout(ServerHttpSecurity.LogoutSpec::disable)
                 .authorizeExchange(auth -> auth
-                        .pathMatchers("/notetask/actuator/health", "/notetask/actuator/health/**").permitAll()
-                        .pathMatchers("/notetask/actuator/**").authenticated()
+                        .pathMatchers("/actuator/health", "/actuator/health/**").permitAll()
+                        .pathMatchers("/actuator/**").authenticated()
                         .anyExchange().authenticated()
                 )
                 .exceptionHandling(spec -> spec

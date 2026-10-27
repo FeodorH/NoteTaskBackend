@@ -1,6 +1,8 @@
 package org.example.notetaskbackend.exception_handler;
 
 import lombok.extern.slf4j.Slf4j;
+import org.example.notetaskbackend.exception.GigaChatAuthException;
+import org.example.notetaskbackend.exception.GigaChatUnavailableException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -33,6 +35,24 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(e.getStatusCode()).body(Map.of(
                 "status", "error",
                 "message", e.getReason() == null ? "Unknown error" : e.getReason()
+        ));
+    }
+
+    @ExceptionHandler(GigaChatUnavailableException.class)
+    public ResponseEntity<Map<String, String>> handleUnavailable(GigaChatUnavailableException e) {
+        log.error("GigaChat unavailable: {}", e.getMessage(), e);
+        return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(Map.of(
+                "status", "gigachat_unavailable",
+                "message", "GigaChat временно недоступен"
+        ));
+    }
+
+    @ExceptionHandler(GigaChatAuthException.class)
+    public ResponseEntity<Map<String, String>> handleAuth(GigaChatAuthException e) {
+        log.error("GigaChat auth failed: {}", e.getMessage(), e);
+        return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(Map.of(
+                "status", "gigachat_auth_error",
+                "message", "Ошибка авторизации в GigaChat"
         ));
     }
 
