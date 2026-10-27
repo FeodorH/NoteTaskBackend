@@ -83,7 +83,7 @@ pipeline {
 
         stage('Deploy') {
             when {
-                expression { env.BRANCH_NAME == 'develop' || env.BRANCH_NAME == DEPLOY_BRANCH } //TODO !!!
+                expression { env.BRANCH_NAME == DEPLOY_BRANCH } //TODO !!!
             }
             steps {
                 withCredentials([
