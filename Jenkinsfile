@@ -81,28 +81,36 @@ pipeline {
             }
         }
 
-        withCredentials([
-            string(credentialsId: 'notetask-api-key-id', variable: 'APP_API_KEY'),
-            string(credentialsId: 'gigachat-client-id', variable: 'GIGACHAT_CLIENT_ID'),
-            string(credentialsId: 'gigachat-client-secret', variable: 'GIGACHAT_CLIENT_SECRET')
-        ]) {
-            sh """
-                docker pull ${REGISTRY}/${IMAGE}:${env.LATEST_TAG}
-                docker stop ${CONTAINER_NAME} || true
-                docker rm ${CONTAINER_NAME} || true
-                docker run -d \\
-                    --name ${CONTAINER_NAME} \\
-                    -p ${HOST_PORT}:${CONTAINER_PORT} \\
-                    -e SPRING_PROFILES_ACTIVE=\${SPRING_PROFILES_ACTIVE} \\
-                    -e APP_API_KEY=\${APP_API_KEY} \\
-                    -e GIGACHAT_CLIENT_ID=\${GIGACHAT_CLIENT_ID} \\
-                    -e GIGACHAT_CLIENT_SECRET=\${GIGACHAT_CLIENT_SECRET} \\
-                    --restart unless-stopped \\
-                    ${REGISTRY}/${IMAGE}:${env.LATEST_TAG}
-                sleep 5
-                docker ps | grep ${CONTAINER_NAME} || (echo "Container failed to start" && exit 1)
-            """
+        stage('Deploy') {
+            when {
+                expression { env.BRANCH_NAME == 'develop' || env.BRANCH_NAME == DEPLOY_BRANCH } //TODO !!!
+            }
+            steps {
+                withCredentials([
+                    string(credentialsId: 'notetask-api-key-id', variable: 'APP_API_KEY'),
+                    string(credentialsId: 'gigachat-client-id', variable: 'GIGACHAT_CLIENT_ID'),
+                    string(credentialsId: 'gigachat-client-secret', variable: 'GIGACHAT_CLIENT_SECRET')
+                ]) {
+                    sh """
+                        docker pull ${REGISTRY}/${IMAGE}:${env.LATEST_TAG}
+                        docker stop ${CONTAINER_NAME} || true
+                        docker rm ${CONTAINER_NAME} || true
+                        docker run -d \\
+                            --name ${CONTAINER_NAME} \\
+                            -p ${HOST_PORT}:${CONTAINER_PORT} \\
+                            -e SPRING_PROFILES_ACTIVE=\${SPRING_PROFILES_ACTIVE} \\
+                            -e APP_API_KEY=\${APP_API_KEY} \\
+                            -e GIGACHAT_CLIENT_ID=\${GIGACHAT_CLIENT_ID} \\
+                            -e GIGACHAT_CLIENT_SECRET=\${GIGACHAT_CLIENT_SECRET} \\
+                            --restart unless-stopped \\
+                            ${REGISTRY}/${IMAGE}:${env.LATEST_TAG}
+                        sleep 5
+                        docker ps | grep ${CONTAINER_NAME} || (echo "Container failed to start" && exit 1)
+                    """
+                }
+            }
         }
+
     }
 
     post {
