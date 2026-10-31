@@ -35,6 +35,7 @@ class GigaChatAuthClientTest {
                 "/api/v2/oauth",
                 baseUrl,             // api-url
                 "/v1/chat/completions",
+                "v1/balance",
                 "test-client-id",
                 "test-client-secret",
                 "GIGACHAT_API_PERS",

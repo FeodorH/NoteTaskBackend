@@ -509,3 +509,512 @@ Caused by: io.netty.resolver.dns.DnsNameResolverTimeoutException: [3348: /10.255
 2026-10-31T11:44:12.586+03:00 DEBUG 4149 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
 2026-10-31T11:44:13.644+03:00  INFO 4149 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.auth_client.GigaChatAuthClient     : GigaChat token obtained, expires in 1793438054887s
 2026-10-31T11:44:13.645+03:00  INFO 4149 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.t.GigaChatTokenProvider            : GigaChat token cached, expires at 2026-10-31T09:14:14.887Z
+2026-10-31T12:10:02.158+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.e.n.NoteTaskBackendApplicationTests    : Starting NoteTaskBackendApplicationTests using Java 21.0.12 with PID 10203 (started by feodor in /home/feodor/projects/NoteTaskBackend)
+2026-10-31T12:10:02.161+03:00 DEBUG 10203 --- [NoteTaskBackend] [Test worker] o.e.n.NoteTaskBackendApplicationTests    : Running with Spring Boot v3.3.0, Spring v6.1.8
+2026-10-31T12:10:02.162+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.e.n.NoteTaskBackendApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2026-10-31T12:10:04.642+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2026-10-31T12:10:04.847+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.e.n.NoteTaskBackendApplicationTests    : Started NoteTaskBackendApplicationTests in 3.018 seconds (process running for 4.539)
+2026-10-31T12:10:06.325+03:00  INFO 10203 --- [NoteTaskBackend] [reactor-http-epoll-2] o.e.n.auth_client.GigaChatAuthClient     : GigaChat token obtained, expires in 1793439605804s
+2026-10-31T12:10:06.385+03:00 ERROR 10203 --- [NoteTaskBackend] [reactor-http-epoll-3] o.e.n.auth_client.GigaChatAuthClient     : GigaChat auth failed
+
+org.springframework.web.reactive.function.client.WebClientResponseException$InternalServerError: 500 Internal Server Error from POST http://localhost:33963/api/v2/oauth
+	at org.springframework.web.reactive.function.client.WebClientResponseException.create(WebClientResponseException.java:318) ~[spring-webflux-6.1.8.jar:6.1.8]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ 500 INTERNAL_SERVER_ERROR from POST http://localhost:33963/api/v2/oauth [DefaultWebClient]
+Original Stack Trace:
+		at org.springframework.web.reactive.function.client.WebClientResponseException.create(WebClientResponseException.java:318) ~[spring-webflux-6.1.8.jar:6.1.8]
+		at org.springframework.web.reactive.function.client.DefaultClientResponse.lambda$createException$1(DefaultClientResponse.java:214) ~[spring-webflux-6.1.8.jar:6.1.8]
+		at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorReturn$ReturnSubscriber.onNext(FluxOnErrorReturn.java:162) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onNext(FluxDefaultIfEmpty.java:122) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:299) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoCollect$CollectSubscriber.onComplete(MonoCollect.java:145) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:415) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:446) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperations.terminate(ChannelOperations.java:500) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.http.client.HttpClientOperations.onInboundNext(HttpClientOperations.java:793) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.epoll.AbstractEpollStreamChannel$EpollStreamUnsafe.epollInReady(AbstractEpollStreamChannel.java:799) ~[netty-transport-classes-epoll-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:501) ~[netty-transport-classes-epoll-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:399) ~[netty-transport-classes-epoll-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2026-10-31T12:10:06.443+03:00 ERROR 10203 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.auth_client.GigaChatAuthClient     : GigaChat auth failed
+
+org.springframework.web.reactive.function.client.WebClientResponseException$Unauthorized: 401 Unauthorized from POST http://localhost:59053/api/v2/oauth
+	at org.springframework.web.reactive.function.client.WebClientResponseException.create(WebClientResponseException.java:308) ~[spring-webflux-6.1.8.jar:6.1.8]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ 401 UNAUTHORIZED from POST http://localhost:59053/api/v2/oauth [DefaultWebClient]
+Original Stack Trace:
+		at org.springframework.web.reactive.function.client.WebClientResponseException.create(WebClientResponseException.java:308) ~[spring-webflux-6.1.8.jar:6.1.8]
+		at org.springframework.web.reactive.function.client.DefaultClientResponse.lambda$createException$1(DefaultClientResponse.java:214) ~[spring-webflux-6.1.8.jar:6.1.8]
+		at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:106) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorReturn$ReturnSubscriber.onNext(FluxOnErrorReturn.java:162) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onNext(FluxDefaultIfEmpty.java:122) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:299) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoCollect$CollectSubscriber.onComplete(MonoCollect.java:145) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.6.6.jar:3.6.6]
+		at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:415) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:446) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperations.terminate(ChannelOperations.java:500) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.http.client.HttpClientOperations.onInboundNext(HttpClientOperations.java:793) ~[reactor-netty-http-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) ~[reactor-netty-core-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) ~[netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.epoll.AbstractEpollStreamChannel$EpollStreamUnsafe.epollInReady(AbstractEpollStreamChannel.java:799) ~[netty-transport-classes-epoll-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:501) ~[netty-transport-classes-epoll-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:399) ~[netty-transport-classes-epoll-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2026-10-31T12:10:06.612+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [org.example.notetaskbackend.controller.ChatControllerTest]: ChatControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-31T12:10:06.645+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration org.example.notetaskbackend.NoteTaskBackendApplication for test class org.example.notetaskbackend.controller.ChatControllerTest
+2026-10-31T12:10:06.691+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.e.n.controller.ChatControllerTest      : Starting ChatControllerTest using Java 21.0.12 with PID 10203 (started by feodor in /home/feodor/projects/NoteTaskBackend)
+2026-10-31T12:10:06.692+03:00 DEBUG 10203 --- [NoteTaskBackend] [Test worker] o.e.n.controller.ChatControllerTest      : Running with Spring Boot v3.3.0, Spring v6.1.8
+2026-10-31T12:10:06.693+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.e.n.controller.ChatControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2026-10-31T12:10:07.401+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.e.n.controller.ChatControllerTest      : Started ChatControllerTest in 0.748 seconds (process running for 7.093)
+2026-10-31T12:10:07.541+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T12:10:07.548+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/health'
+2026-10-31T12:10:07.550+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T12:10:07.551+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/health/**'
+2026-10-31T12:10:07.551+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:10:07.551+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-10-31T12:10:07.552+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/**'
+2026-10-31T12:10:07.552+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:10:07.553+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/v1/generate' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@4bb18d1e
+2026-10-31T12:10:07.556+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
+2026-10-31T12:10:07.695+03:00  WARN 10203 --- [NoteTaskBackend] [parallel-2] o.e.n.e.GlobalExceptionHandler           : Validation failed: prompt: Size must been < 4000
+2026-10-31T12:10:07.797+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T12:10:07.798+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/health'
+2026-10-31T12:10:07.798+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T12:10:07.799+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/health/**'
+2026-10-31T12:10:07.801+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:10:07.803+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-10-31T12:10:07.804+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/**'
+2026-10-31T12:10:07.805+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:10:07.806+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/v1/generate' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@4bb18d1e
+2026-10-31T12:10:07.808+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
+2026-10-31T12:10:07.811+03:00  WARN 10203 --- [NoteTaskBackend] [parallel-4] o.e.n.e.GlobalExceptionHandler           : Validation failed: prompt: Prompt must been not null!
+2026-10-31T12:10:07.870+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T12:10:07.871+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/health'
+2026-10-31T12:10:07.871+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T12:10:07.872+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/health/**'
+2026-10-31T12:10:07.872+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:10:07.873+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-10-31T12:10:07.874+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/**'
+2026-10-31T12:10:07.875+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:10:07.882+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/v1/generate' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@4bb18d1e
+2026-10-31T12:10:07.883+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
+2026-10-31T12:10:07.901+03:00 ERROR 10203 --- [NoteTaskBackend] [parallel-6] o.e.n.e.GlobalExceptionHandler           : Unhandled exception
+
+com.github.dockerjava.api.exception.InternalServerErrorException: Status 500: Falling down!
+	at org.example.notetaskbackend.controller.ChatControllerTest.shouldReturn500WhenServiceFails(ChatControllerTest.java:141) ~[test/:na]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Handler org.example.notetaskbackend.controller.ChatController#postGenerateRequest(ChatRequest) [DispatcherHandler]
+Original Stack Trace:
+		at org.example.notetaskbackend.controller.ChatControllerTest.shouldReturn500WhenServiceFails(ChatControllerTest.java:141) ~[test/:na]
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+		at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728) ~[junit-platform-commons-1.10.2.jar:1.10.2]
+		at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+		at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+		at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+		at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+		at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+		at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+		at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+		at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+		at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+		at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+		at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+		at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+		at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+		at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+		at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+		at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+		at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+		at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+		at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+		at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+		at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+		at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+		at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+		at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+		at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+		at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+		at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+		at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+		at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+		at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:124) ~[na:na]
+		at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:99) ~[na:na]
+		at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:94) ~[na:na]
+		at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63) ~[na:na]
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+		at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[na:na]
+		at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
+		at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[na:na]
+		at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92) ~[na:na]
+		at jdk.proxy1/jdk.proxy1.$Proxy4.stop(Unknown Source) ~[na:na]
+		at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200) ~[na:na]
+		at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132) ~[na:na]
+		at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103) ~[na:na]
+		at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63) ~[na:na]
+		at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[na:na]
+		at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:121) ~[na:na]
+		at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[na:na]
+		at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:na]
+		at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:na]
+
+2026-10-31T12:10:07.958+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T12:10:07.959+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/health'
+2026-10-31T12:10:07.960+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T12:10:07.964+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/health/**'
+2026-10-31T12:10:07.969+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:10:07.970+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-10-31T12:10:07.971+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/**'
+2026-10-31T12:10:07.972+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:10:07.972+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/v1/generate' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@4bb18d1e
+2026-10-31T12:10:07.975+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
+2026-10-31T12:10:07.981+03:00  WARN 10203 --- [NoteTaskBackend] [parallel-8] o.e.n.e.GlobalExceptionHandler           : Validation failed: prompt: Prompt must been not null!
+2026-10-31T12:10:08.017+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T12:10:08.018+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/health'
+2026-10-31T12:10:08.018+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T12:10:08.019+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/health/**'
+2026-10-31T12:10:08.020+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:10:08.020+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-10-31T12:10:08.022+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/**'
+2026-10-31T12:10:08.023+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:10:08.025+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/v1/generate' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@4bb18d1e
+2026-10-31T12:10:08.026+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] ebSessionServerSecurityContextRepository : No SecurityContext found in WebSession: 'org.springframework.web.server.session.InMemoryWebSessionStore$InMemoryWebSession@26be1492'
+2026-10-31T12:10:08.027+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization failed: Access Denied
+2026-10-31T12:10:08.030+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-2] ebSessionServerSecurityContextRepository : No SecurityContext found in WebSession: 'org.springframework.web.server.session.InMemoryWebSessionStore$InMemoryWebSession@26be1492'
+2026-10-31T12:10:08.058+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T12:10:08.059+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/health'
+2026-10-31T12:10:08.060+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T12:10:08.061+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/health/**'
+2026-10-31T12:10:08.062+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:10:08.063+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-10-31T12:10:08.064+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/**'
+2026-10-31T12:10:08.065+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:10:08.066+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/v1/generate' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@4bb18d1e
+2026-10-31T12:10:08.067+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-4] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
+2026-10-31T12:10:08.093+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-5] o.s.s.w.s.a.AuthenticationWebFilter      : Authentication failed: Invalid API key
+
+org.springframework.security.authentication.BadCredentialsException: Invalid API key
+	at org.example.notetaskbackend.security.ApiKeyAuthenticationManager.authenticate(ApiKeyAuthenticationManager.java:29) ~[main/:na]
+	at org.springframework.security.web.server.authentication.AuthenticationWebFilter.lambda$authenticate$5(AuthenticationWebFilter.java:122) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at reactor.core.publisher.FluxFlatMap.trySubscribeScalarMap(FluxFlatMap.java:153) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap.subscribeOrReturn(MonoFlatMap.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:63) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:158) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onNext(FluxFilterFuseable.java:118) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2571) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.request(FluxFilterFuseable.java:191) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.request(MonoFlatMap.java:194) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:2367) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:2241) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onSubscribe(MonoFlatMap.java:117) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onSubscribe(FluxFilterFuseable.java:87) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:55) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondComplete(MonoFlatMap.java:245) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapInner.onNext(MonoFlatMap.java:305) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoCollectList$MonoCollectListSubscriber.onComplete(MonoCollectList.java:118) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.fastPath(FluxIterable.java:424) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.request(FluxIterable.java:291) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$BaseFluxToMonoOperator.request(Operators.java:2067) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapInner.onSubscribe(MonoFlatMap.java:291) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$BaseFluxToMonoOperator.onSubscribe(Operators.java:2051) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:201) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFromFluxOperator.subscribe(MonoFromFluxOperator.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterWhen$FluxFilterWhenSubscriber.drain(FluxFilterWhen.java:302) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterWhen$FluxFilterWhenSubscriber.onNext(FluxFilterWhen.java:140) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.slowPath(FluxIterable.java:335) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable$IterableSubscription.request(FluxIterable.java:294) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterWhen$FluxFilterWhenSubscriber.onSubscribe(FluxFilterWhen.java:200) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:201) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4568) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:265) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4568) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Mono.subscribeWith(Mono.java:4634) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4534) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4470) ~[reactor-core-3.6.6.jar:3.6.6]
+	at org.springframework.test.web.reactive.server.HttpHandlerConnector.lambda$doConnect$2(HttpHandlerConnector.java:100) ~[spring-test-6.1.8.jar:6.1.8]
+	at org.springframework.mock.http.client.reactive.MockClientHttpRequest.lambda$writeWith$2(MockClientHttpRequest.java:124) ~[spring-test-6.1.8.jar:6.1.8]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:45) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4568) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxConcatIterable$ConcatIterableSubscriber.onComplete(FluxConcatIterable.java:148) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxConcatIterable.subscribe(FluxConcatIterable.java:60) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFromFluxOperator.subscribe(MonoFromFluxOperator.java:83) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:165) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:74) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$MonoInnerProducerBase.complete(Operators.java:2864) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoSingle$SingleSubscriber.onComplete(MonoSingle.java:180) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onComplete(FluxMapFuseable.java:152) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2573) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:171) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoSingle$SingleSubscriber.doOnRequest(MonoSingle.java:103) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$MonoInnerProducerBase.request(Operators.java:2931) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:2367) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:2241) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoSingle$SingleSubscriber.onSubscribe(MonoSingle.java:115) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onSubscribe(FluxMapFuseable.java:96) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:55) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFromMonoOperator.subscribe(FluxFromMonoOperator.java:85) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxDeferContextual.subscribe(FluxDeferContextual.java:57) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4568) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Mono.subscribeWith(Mono.java:4634) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4534) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4470) ~[reactor-core-3.6.6.jar:3.6.6]
+	at org.springframework.test.web.reactive.server.HttpHandlerConnector.doConnect(HttpHandlerConnector.java:114) ~[spring-test-6.1.8.jar:6.1.8]
+	at org.springframework.test.web.reactive.server.HttpHandlerConnector.lambda$connect$0(HttpHandlerConnector.java:81) ~[spring-test-6.1.8.jar:6.1.8]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:45) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4568) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoSubscribeOn$SubscribeOnSubscriber.run(MonoSubscribeOn.java:126) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:84) ~[reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.scheduler.WorkerTask.call(WorkerTask.java:37) ~[reactor-core-3.6.6.jar:3.6.6]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2026-10-31T12:10:08.171+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [org.example.notetaskbackend.security.ApiKeyAuthIntegrationTest]: ApiKeyAuthIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-31T12:10:08.228+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration org.example.notetaskbackend.NoteTaskBackendApplication for test class org.example.notetaskbackend.security.ApiKeyAuthIntegrationTest
+2026-10-31T12:10:08.308+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.e.n.s.ApiKeyAuthIntegrationTest        : Starting ApiKeyAuthIntegrationTest using Java 21.0.12 with PID 10203 (started by feodor in /home/feodor/projects/NoteTaskBackend)
+2026-10-31T12:10:08.308+03:00 DEBUG 10203 --- [NoteTaskBackend] [Test worker] o.e.n.s.ApiKeyAuthIntegrationTest        : Running with Spring Boot v3.3.0, Spring v6.1.8
+2026-10-31T12:10:08.308+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.e.n.s.ApiKeyAuthIntegrationTest        : No active profile set, falling back to 1 default profile: "default"
+2026-10-31T12:10:09.083+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2026-10-31T12:10:09.238+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 39069 (http)
+2026-10-31T12:10:09.247+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.e.n.s.ApiKeyAuthIntegrationTest        : Started ApiKeyAuthIntegrationTest in 1.009 seconds (process running for 8.94)
+2026-10-31T12:10:09.303+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T12:10:09.303+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/metrics' doesn't match 'null /actuator/health'
+2026-10-31T12:10:09.303+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T12:10:09.303+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/metrics' doesn't match 'null /actuator/health/**'
+2026-10-31T12:10:09.304+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:10:09.305+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-10-31T12:10:09.305+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] athPatternParserServerWebExchangeMatcher : Checking match of request : '/actuator/metrics'; against '/actuator/**'
+2026-10-31T12:10:09.305+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : matched
+2026-10-31T12:10:09.305+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/actuator/metrics' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@2f9d410e
+2026-10-31T12:10:09.306+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-6] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
+2026-10-31T12:10:09.362+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-7] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T12:10:09.362+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-7] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/metrics' doesn't match 'null /actuator/health'
+2026-10-31T12:10:09.363+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-7] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T12:10:09.363+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-7] athPatternParserServerWebExchangeMatcher : Request 'GET /actuator/metrics' doesn't match 'null /actuator/health/**'
+2026-10-31T12:10:09.364+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-7] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:10:09.365+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-7] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-10-31T12:10:09.365+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-7] athPatternParserServerWebExchangeMatcher : Checking match of request : '/actuator/metrics'; against '/actuator/**'
+2026-10-31T12:10:09.365+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-7] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : matched
+2026-10-31T12:10:09.366+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-7] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/actuator/metrics' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@2f9d410e
+2026-10-31T12:10:09.366+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-7] ebSessionServerSecurityContextRepository : No SecurityContext found in WebSession: 'org.springframework.web.server.session.InMemoryWebSessionStore$InMemoryWebSession@16e5ff24'
+2026-10-31T12:10:09.368+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-7] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization failed: Access Denied
+2026-10-31T12:10:09.370+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-7] ebSessionServerSecurityContextRepository : No SecurityContext found in WebSession: 'org.springframework.web.server.session.InMemoryWebSessionStore$InMemoryWebSession@16e5ff24'
+2026-10-31T12:10:09.385+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T12:10:09.386+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] athPatternParserServerWebExchangeMatcher : Checking match of request : '/actuator/health'; against '/actuator/health'
+2026-10-31T12:10:09.387+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T12:10:09.387+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] athPatternParserServerWebExchangeMatcher : Checking match of request : '/actuator/health'; against '/actuator/health/**'
+2026-10-31T12:10:09.388+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : matched
+2026-10-31T12:10:09.388+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/actuator/health' using org.springframework.security.config.web.server.ServerHttpSecurity$AuthorizeExchangeSpec$Access$$Lambda/0x00007a6f585b8658@5a40d504
+2026-10-31T12:10:09.391+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
+2026-10-31T12:10:09.393+03:00 DEBUG 10203 --- [NoteTaskBackend] [parallel-8] ebSessionServerSecurityContextRepository : No SecurityContext found in WebSession: 'org.springframework.web.server.session.InMemoryWebSessionStore$InMemoryWebSession@66db2b61'
+2026-10-31T12:10:09.691+03:00  WARN 10203 --- [NoteTaskBackend] [Test worker] o.e.n.service.GigaChatService            : GigaChat 401, invalidating token and retrying once
+2026-10-31T12:10:09.702+03:00  WARN 10203 --- [NoteTaskBackend] [Test worker] o.e.n.service.GigaChatService            : GigaChat 401, invalidating token and retrying once
+2026-10-31T12:10:09.761+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.e.n.t.GigaChatTokenProvider            : GigaChat token cached, expires at 2026-10-31T09:40:09.760Z
+2026-10-31T12:10:09.761+03:00  WARN 10203 --- [NoteTaskBackend] [Test worker] o.e.n.t.GigaChatTokenProvider            : GigaChat token invalidated
+2026-10-31T12:10:09.761+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.e.n.t.GigaChatTokenProvider            : GigaChat token cached, expires at 2026-10-31T09:40:09.760Z
+2026-10-31T12:10:09.765+03:00 ERROR 10203 --- [NoteTaskBackend] [Test worker] o.e.n.t.GigaChatTokenProvider            : Token fetch failed
+
+java.lang.RuntimeException: auth failed
+	at org.example.notetaskbackend.token_provider.TokenProviderTest.authError_propagated(TokenProviderTest.java:103) ~[test/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728) ~[junit-platform-commons-1.10.2.jar:1.10.2]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:124) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:99) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:94) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63) ~[na:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[na:na]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[na:na]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92) ~[na:na]
+	at jdk.proxy1/jdk.proxy1.$Proxy4.stop(Unknown Source) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103) ~[na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63) ~[na:na]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[na:na]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:121) ~[na:na]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[na:na]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:na]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:na]
+
+2026-10-31T12:10:09.888+03:00  INFO 10203 --- [NoteTaskBackend] [parallel-1] o.e.n.t.GigaChatTokenProvider            : GigaChat token cached, expires at 2026-10-31T09:40:09.782Z
+2026-10-31T12:10:09.900+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.e.n.t.GigaChatTokenProvider            : GigaChat token cached, expires at 2026-10-31T09:40:09.900Z
+2026-10-31T12:10:09.906+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.e.n.t.GigaChatTokenProvider            : GigaChat token cached, expires at 2026-10-31T09:40:09.905Z
