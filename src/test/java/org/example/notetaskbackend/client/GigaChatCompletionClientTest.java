@@ -31,6 +31,7 @@ class GigaChatCompletionClientTest {
         GigaChatProperties props = new GigaChatProperties(
                 baseUrl, "/api/v2/oauth",
                 baseUrl, "/v1/chat/completions",
+                "/v1/balance",
                 "id", "secret",
                 "GIGACHAT_API_PERS",
                 "GigaChat-3-Ultra"
