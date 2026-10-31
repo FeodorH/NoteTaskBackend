@@ -36,4 +36,20 @@ public class GigaChatService {
                 );
     }
 
+    public Mono<String> gigaChatGetBalance(){
+        return gigaChatTokenProvider.getToken()
+                .flatMap(token -> gigaChatCompletionClient
+                        .getBalance(token))
+                .onErrorResume(WebClientResponseException.Unauthorized.class, e -> {
+                    log.warn("GigaChat 401, invalidating token and retrying once");
+                    gigaChatTokenProvider.invalidate();
+                    return gigaChatTokenProvider.getToken()
+                            .flatMap(newToken -> gigaChatCompletionClient
+                                    .getBalance(newToken));
+                })
+                .onErrorMap(
+                e -> !(e instanceof GigaChatUnavailableException),
+                e -> new GigaChatUnavailableException("GigaChat недоступен: " + e.getMessage(), e)
+                );
+    }
 }

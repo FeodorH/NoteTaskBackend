@@ -8,6 +8,7 @@ public record GigaChatProperties(
         String authPath,
         String apiUrl,
         String completionPath,
+        String balancePath,
         String clientId,
         String clientSecret,
         String scope,

@@ -12,7 +12,7 @@ pipeline {
         LATEST_TAG = 'latest'
 
         // Spring
-        CONTAINER_NAME = 'taskchecker-main'
+        CONTAINER_NAME = 'notetask'
         HOST_PORT = '8001'
         CONTAINER_PORT = '8080'
     }

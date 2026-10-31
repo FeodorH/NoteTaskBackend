@@ -2,6 +2,7 @@ package org.example.notetaskbackend.api_client;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.notetaskbackend.config.GigaChatProperties;
+import org.example.notetaskbackend.dto.gigachat_api.GigaChatBalanceResponse;
 import org.example.notetaskbackend.dto.gigachat_api.GigaChatCompletionRequest;
 import org.example.notetaskbackend.dto.gigachat_api.GigaChatCompletionResponse;
 import org.example.notetaskbackend.dto.gigachat_api.GigaChatMessage;
@@ -50,6 +51,21 @@ public class GigaChatCompletionClient {
                         throw new GigaChatUnavailableException("GigaChat returned empty response");
                     }
                     return resp.choices().get(0).message().content();
+                });
+    }
+
+    public Mono<String> getBalance(String token){
+        return webClient.get()
+                .uri(properties.balancePath())
+                .header("Authorization", "Bearer " + token)
+                .retrieve()
+                .bodyToMono(GigaChatBalanceResponse.class)
+                .map(
+                response -> {
+                    if (response.balance() != null && !response.balance().isEmpty()) {
+                        return String.valueOf(response.balance().get(0).value());
+                    }
+                    return "0";
                 });
     }
 }
