@@ -8,6 +8,6 @@ import java.util.List;
 public record GigaChatBalanceResponse(List<BalanceInfo> balance) {
 
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public record BalanceInfo(Long value, String type) {
+    public record BalanceInfo(Long value, String usage) {
     }
 }

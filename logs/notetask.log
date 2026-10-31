@@ -1018,3 +1018,146 @@ java.lang.RuntimeException: auth failed
 2026-10-31T12:10:09.888+03:00  INFO 10203 --- [NoteTaskBackend] [parallel-1] o.e.n.t.GigaChatTokenProvider            : GigaChat token cached, expires at 2026-10-31T09:40:09.782Z
 2026-10-31T12:10:09.900+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.e.n.t.GigaChatTokenProvider            : GigaChat token cached, expires at 2026-10-31T09:40:09.900Z
 2026-10-31T12:10:09.906+03:00  INFO 10203 --- [NoteTaskBackend] [Test worker] o.e.n.t.GigaChatTokenProvider            : GigaChat token cached, expires at 2026-10-31T09:40:09.905Z
+2026-10-31T12:22:59.409+03:00  INFO 11732 --- [NoteTaskBackend] [Test worker] o.e.n.controller.ChatControllerTest      : Starting ChatControllerTest using Java 21.0.12 with PID 11732 (started by feodor in /home/feodor/projects/NoteTaskBackend)
+2026-10-31T12:22:59.410+03:00 DEBUG 11732 --- [NoteTaskBackend] [Test worker] o.e.n.controller.ChatControllerTest      : Running with Spring Boot v3.3.0, Spring v6.1.8
+2026-10-31T12:22:59.411+03:00  INFO 11732 --- [NoteTaskBackend] [Test worker] o.e.n.controller.ChatControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2026-10-31T12:23:01.599+03:00  INFO 11732 --- [NoteTaskBackend] [Test worker] o.e.n.controller.ChatControllerTest      : Started ChatControllerTest in 2.72 seconds (process running for 3.821)
+2026-10-31T12:23:01.817+03:00 DEBUG 11732 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T12:23:01.821+03:00 DEBUG 11732 --- [NoteTaskBackend] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/health'
+2026-10-31T12:23:01.826+03:00 DEBUG 11732 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T12:23:01.827+03:00 DEBUG 11732 --- [NoteTaskBackend] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/health/**'
+2026-10-31T12:23:01.828+03:00 DEBUG 11732 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:23:01.828+03:00 DEBUG 11732 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-10-31T12:23:01.828+03:00 DEBUG 11732 --- [NoteTaskBackend] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'POST /v1/generate' doesn't match 'null /actuator/**'
+2026-10-31T12:23:01.829+03:00 DEBUG 11732 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:23:01.831+03:00 DEBUG 11732 --- [NoteTaskBackend] [parallel-2] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/v1/generate' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@6502b306
+2026-10-31T12:23:01.836+03:00 DEBUG 11732 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
+2026-10-31T12:23:02.011+03:00  WARN 11732 --- [NoteTaskBackend] [parallel-2] o.e.n.e.GlobalExceptionHandler           : Validation failed: prompt: Size must been < 4000
+2026-10-31T12:57:24.375+03:00  INFO 13661 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Starting NoteTaskBackendApplication using Java 21.0.12 with PID 13661 (/home/feodor/projects/NoteTaskBackend/build/classes/java/main started by feodor in /home/feodor/projects/NoteTaskBackend)
+2026-10-31T12:57:24.378+03:00 DEBUG 13661 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Running with Spring Boot v3.3.0, Spring v6.1.8
+2026-10-31T12:57:24.381+03:00  INFO 13661 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : The following 2 profiles are active: "dev", "secret"
+2026-10-31T12:57:24.451+03:00  INFO 13661 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-10-31T12:57:24.452+03:00  INFO 13661 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-10-31T12:57:27.909+03:00  INFO 13661 --- [NoteTaskBackend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2026-10-31T12:57:28.206+03:00  INFO 13661 --- [NoteTaskBackend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-10-31T12:57:28.354+03:00  INFO 13661 --- [NoteTaskBackend] [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2026-10-31T12:57:28.366+03:00  INFO 13661 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Started NoteTaskBackendApplication in 4.714 seconds (process running for 5.232)
+2026-10-31T12:57:54.205+03:00 DEBUG 13661 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T12:57:54.209+03:00 DEBUG 13661 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/health'
+2026-10-31T12:57:54.212+03:00 DEBUG 13661 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T12:57:54.213+03:00 DEBUG 13661 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/health/**'
+2026-10-31T12:57:54.213+03:00 DEBUG 13661 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:57:54.214+03:00 DEBUG 13661 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-10-31T12:57:54.215+03:00 DEBUG 13661 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/**'
+2026-10-31T12:57:54.215+03:00 DEBUG 13661 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:57:54.218+03:00 DEBUG 13661 --- [NoteTaskBackend] [parallel-1] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/v1/balance' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@4fef1dfd
+2026-10-31T12:57:54.230+03:00 DEBUG 13661 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
+2026-10-31T12:57:55.261+03:00  INFO 13661 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.auth_client.GigaChatAuthClient     : GigaChat token obtained, expires in 1793442476355s
+2026-10-31T12:57:55.264+03:00  INFO 13661 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.t.GigaChatTokenProvider            : GigaChat token cached, expires at 2026-10-31T10:27:56.355Z
+2026-10-31T12:57:55.687+03:00  INFO 13661 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.a.GigaChatCompletionClient         : !@#
+2026-10-31T12:58:50.673+03:00  INFO 14291 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Starting NoteTaskBackendApplication using Java 21.0.12 with PID 14291 (/home/feodor/projects/NoteTaskBackend/build/classes/java/main started by feodor in /home/feodor/projects/NoteTaskBackend)
+2026-10-31T12:58:50.674+03:00 DEBUG 14291 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Running with Spring Boot v3.3.0, Spring v6.1.8
+2026-10-31T12:58:50.675+03:00  INFO 14291 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : The following 2 profiles are active: "dev", "secret"
+2026-10-31T12:58:50.742+03:00  INFO 14291 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-10-31T12:58:50.742+03:00  INFO 14291 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-10-31T12:58:53.112+03:00  INFO 14291 --- [NoteTaskBackend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2026-10-31T12:58:53.425+03:00  INFO 14291 --- [NoteTaskBackend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-10-31T12:58:53.645+03:00  INFO 14291 --- [NoteTaskBackend] [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2026-10-31T12:58:53.658+03:00  INFO 14291 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Started NoteTaskBackendApplication in 3.461 seconds (process running for 4.169)
+2026-10-31T12:58:56.323+03:00 DEBUG 14291 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T12:58:56.332+03:00 DEBUG 14291 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/health'
+2026-10-31T12:58:56.337+03:00 DEBUG 14291 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T12:58:56.337+03:00 DEBUG 14291 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/health/**'
+2026-10-31T12:58:56.337+03:00 DEBUG 14291 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:58:56.338+03:00 DEBUG 14291 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-10-31T12:58:56.339+03:00 DEBUG 14291 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/**'
+2026-10-31T12:58:56.340+03:00 DEBUG 14291 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T12:58:56.343+03:00 DEBUG 14291 --- [NoteTaskBackend] [parallel-1] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/v1/balance' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@779e1641
+2026-10-31T12:58:56.368+03:00 DEBUG 14291 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
+2026-10-31T12:58:57.068+03:00  INFO 14291 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.auth_client.GigaChatAuthClient     : GigaChat token obtained, expires in 1793442537790s
+2026-10-31T12:58:57.070+03:00  INFO 14291 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.t.GigaChatTokenProvider            : GigaChat token cached, expires at 2026-10-31T10:28:57.790Z
+2026-10-31T12:58:57.485+03:00  INFO 14291 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.a.GigaChatCompletionClient         : GigaChatBalanceResponse[balance=[BalanceInfo[value=49996592, type=null], BalanceInfo[value=40000000, type=null], BalanceInfo[value=25000000, type=null], BalanceInfo[value=250000000, type=null]]]
+2026-10-31T13:01:18.402+03:00  INFO 14985 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Starting NoteTaskBackendApplication using Java 21.0.12 with PID 14985 (/home/feodor/projects/NoteTaskBackend/build/classes/java/main started by feodor in /home/feodor/projects/NoteTaskBackend)
+2026-10-31T13:01:18.405+03:00 DEBUG 14985 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Running with Spring Boot v3.3.0, Spring v6.1.8
+2026-10-31T13:01:18.407+03:00  INFO 14985 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : The following 2 profiles are active: "dev", "secret"
+2026-10-31T13:01:18.569+03:00  INFO 14985 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-10-31T13:01:18.569+03:00  INFO 14985 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-10-31T13:01:21.108+03:00  INFO 14985 --- [NoteTaskBackend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2026-10-31T13:01:21.292+03:00  INFO 14985 --- [NoteTaskBackend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-10-31T13:01:21.528+03:00  INFO 14985 --- [NoteTaskBackend] [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2026-10-31T13:01:21.542+03:00  INFO 14985 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Started NoteTaskBackendApplication in 3.896 seconds (process running for 4.337)
+2026-10-31T13:01:23.683+03:00 DEBUG 14985 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T13:01:23.685+03:00 DEBUG 14985 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/health'
+2026-10-31T13:01:23.687+03:00 DEBUG 14985 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T13:01:23.687+03:00 DEBUG 14985 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/health/**'
+2026-10-31T13:01:23.688+03:00 DEBUG 14985 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T13:01:23.688+03:00 DEBUG 14985 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-10-31T13:01:23.688+03:00 DEBUG 14985 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/**'
+2026-10-31T13:01:23.688+03:00 DEBUG 14985 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T13:01:23.689+03:00 DEBUG 14985 --- [NoteTaskBackend] [parallel-1] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/v1/balance' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@512167e
+2026-10-31T13:01:23.695+03:00 DEBUG 14985 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
+2026-10-31T13:01:24.302+03:00  INFO 14985 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.auth_client.GigaChatAuthClient     : GigaChat token obtained, expires in 1793442684271s
+2026-10-31T13:01:24.305+03:00  INFO 14985 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.t.GigaChatTokenProvider            : GigaChat token cached, expires at 2026-10-31T10:31:24.271Z
+2026-10-31T13:01:24.602+03:00  INFO 14985 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.a.GigaChatCompletionClient         : GigaChatBalanceResponse[balance=[BalanceInfo[value=25000000, usage=GigaChat-Max], BalanceInfo[value=250000000, usage=GigaChat], BalanceInfo[value=49996592, usage=GigaChat-Ultra], BalanceInfo[value=40000000, usage=GigaChat-Pro]]]
+2026-10-31T13:13:31.408+03:00  INFO 16502 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Starting NoteTaskBackendApplication using Java 21.0.12 with PID 16502 (/home/feodor/projects/NoteTaskBackend/build/classes/java/main started by feodor in /home/feodor/projects/NoteTaskBackend)
+2026-10-31T13:13:31.410+03:00 DEBUG 16502 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Running with Spring Boot v3.3.0, Spring v6.1.8
+2026-10-31T13:13:31.411+03:00  INFO 16502 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : The following 2 profiles are active: "dev", "secret"
+2026-10-31T13:13:31.458+03:00  INFO 16502 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-10-31T13:13:31.458+03:00  INFO 16502 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-10-31T13:13:33.801+03:00  INFO 16502 --- [NoteTaskBackend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2026-10-31T13:13:34.011+03:00  INFO 16502 --- [NoteTaskBackend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-10-31T13:13:34.236+03:00  INFO 16502 --- [NoteTaskBackend] [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2026-10-31T13:13:34.246+03:00  INFO 16502 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Started NoteTaskBackendApplication in 3.349 seconds (process running for 3.753)
+2026-10-31T13:22:43.836+03:00 DEBUG 16502 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T13:22:43.838+03:00 DEBUG 16502 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/health'
+2026-10-31T13:22:43.839+03:00 DEBUG 16502 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T13:22:43.840+03:00 DEBUG 16502 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/health/**'
+2026-10-31T13:22:43.841+03:00 DEBUG 16502 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T13:22:43.841+03:00 DEBUG 16502 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-10-31T13:22:43.842+03:00 DEBUG 16502 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/**'
+2026-10-31T13:22:43.842+03:00 DEBUG 16502 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T13:22:43.843+03:00 DEBUG 16502 --- [NoteTaskBackend] [parallel-1] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/v1/balance' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@6f54d4ec
+2026-10-31T13:22:43.846+03:00 DEBUG 16502 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
+2026-10-31T13:22:44.455+03:00  INFO 16502 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.auth_client.GigaChatAuthClient     : GigaChat token obtained, expires in 1793443964895s
+2026-10-31T13:22:44.456+03:00  INFO 16502 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.t.GigaChatTokenProvider            : GigaChat token cached, expires at 2026-10-31T10:52:44.895Z
+2026-10-31T13:58:14.381+03:00  INFO 17585 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Starting NoteTaskBackendApplication using Java 21.0.12 with PID 17585 (/home/feodor/projects/NoteTaskBackend/build/classes/java/main started by feodor in /home/feodor/projects/NoteTaskBackend)
+2026-10-31T13:58:14.382+03:00 DEBUG 17585 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Running with Spring Boot v3.3.0, Spring v6.1.8
+2026-10-31T13:58:14.383+03:00  INFO 17585 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : The following 2 profiles are active: "dev", "secret"
+2026-10-31T13:58:14.425+03:00  INFO 17585 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-10-31T13:58:14.426+03:00  INFO 17585 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-10-31T13:58:16.039+03:00  INFO 17585 --- [NoteTaskBackend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2026-10-31T13:58:16.256+03:00  INFO 17585 --- [NoteTaskBackend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-10-31T13:58:16.412+03:00  INFO 17585 --- [NoteTaskBackend] [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2026-10-31T13:58:16.426+03:00  INFO 17585 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Started NoteTaskBackendApplication in 2.369 seconds (process running for 2.761)
+2026-10-31T13:58:20.725+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T13:58:20.728+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/health'
+2026-10-31T13:58:20.734+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T13:58:20.734+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/health/**'
+2026-10-31T13:58:20.735+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T13:58:20.735+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-10-31T13:58:20.736+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/**'
+2026-10-31T13:58:20.738+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T13:58:20.740+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-1] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/v1/balance' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@249a05b4
+2026-10-31T13:58:20.756+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
+2026-10-31T13:58:21.447+03:00  INFO 17585 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.auth_client.GigaChatAuthClient     : GigaChat token obtained, expires in 1793446102270s
+2026-10-31T13:58:21.448+03:00  INFO 17585 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.t.GigaChatTokenProvider            : GigaChat token cached, expires at 2026-10-31T11:28:22.270Z
+2026-10-31T13:58:25.187+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T13:58:25.187+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/health'
+2026-10-31T13:58:25.188+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T13:58:25.188+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/health/**'
+2026-10-31T13:58:25.188+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T13:58:25.188+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-10-31T13:58:25.188+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-2] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/**'
+2026-10-31T13:58:25.188+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T13:58:25.189+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-2] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/v1/balance' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@249a05b4
+2026-10-31T13:58:25.189+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-2] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
+2026-10-31T13:58:26.410+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T13:58:26.410+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/health'
+2026-10-31T13:58:26.410+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T13:58:26.410+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/health/**'
+2026-10-31T13:58:26.411+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T13:58:26.411+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-10-31T13:58:26.411+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-3] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/**'
+2026-10-31T13:58:26.411+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-3] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T13:58:26.411+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-3] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/v1/balance' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@249a05b4
+2026-10-31T13:58:26.411+03:00 DEBUG 17585 --- [NoteTaskBackend] [parallel-3] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful

@@ -63,7 +63,13 @@ public class GigaChatCompletionClient {
                 .map(
                 response -> {
                     if (response.balance() != null && !response.balance().isEmpty()) {
-                        return String.valueOf(response.balance().get(0).value());
+
+                        return response.balance().stream()
+                                .filter(el -> "GigaChat-Ultra".equalsIgnoreCase(el.usage()))
+                                .findFirst()
+                                .or(() -> response.balance().stream().findFirst())
+                                .map(el -> String.valueOf(el.value()))
+                                .orElse("0");
                     }
                     return "0";
                 });
