@@ -488,3 +488,24 @@ Caused by: java.net.UnknownHostException: Failed to resolve 'ngw.devices.sberban
 	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
 Caused by: io.netty.resolver.dns.DnsNameResolverTimeoutException: [3348: /10.255.255.254:53] DefaultDnsQuestion(ngw.devices.sberbank.ru. IN A) query '3348' via UDP timed out after 5000 milliseconds (no stack trace available)
 
+2026-10-31T11:43:51.914+03:00  INFO 4149 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Starting NoteTaskBackendApplication using Java 21.0.12 with PID 4149 (/home/feodor/projects/NoteTaskBackend/build/classes/java/main started by feodor in /home/feodor/projects/NoteTaskBackend)
+2026-10-31T11:43:51.915+03:00 DEBUG 4149 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Running with Spring Boot v3.3.0, Spring v6.1.8
+2026-10-31T11:43:51.917+03:00  INFO 4149 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : The following 2 profiles are active: "dev", "secret"
+2026-10-31T11:43:51.980+03:00  INFO 4149 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-10-31T11:43:51.980+03:00  INFO 4149 --- [NoteTaskBackend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-10-31T11:43:54.088+03:00  INFO 4149 --- [NoteTaskBackend] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2026-10-31T11:43:54.296+03:00  INFO 4149 --- [NoteTaskBackend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-10-31T11:43:54.449+03:00  INFO 4149 --- [NoteTaskBackend] [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2026-10-31T11:43:54.462+03:00  INFO 4149 --- [NoteTaskBackend] [restartedMain] o.e.n.NoteTaskBackendApplication         : Started NoteTaskBackendApplication in 3.039 seconds (process running for 3.705)
+2026-10-31T11:44:12.573+03:00 DEBUG 4149 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health', method=null}
+2026-10-31T11:44:12.575+03:00 DEBUG 4149 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/health'
+2026-10-31T11:44:12.577+03:00 DEBUG 4149 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/health/**', method=null}
+2026-10-31T11:44:12.578+03:00 DEBUG 4149 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/health/**'
+2026-10-31T11:44:12.578+03:00 DEBUG 4149 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T11:44:12.579+03:00 DEBUG 4149 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : Trying to match using PathMatcherServerWebExchangeMatcher{pattern='/actuator/**', method=null}
+2026-10-31T11:44:12.579+03:00 DEBUG 4149 --- [NoteTaskBackend] [parallel-1] athPatternParserServerWebExchangeMatcher : Request 'GET /v1/balance' doesn't match 'null /actuator/**'
+2026-10-31T11:44:12.579+03:00 DEBUG 4149 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.u.m.OrServerWebExchangeMatcher : No matches found
+2026-10-31T11:44:12.580+03:00 DEBUG 4149 --- [NoteTaskBackend] [parallel-1] a.DelegatingReactiveAuthorizationManager : Checking authorization on '/v1/balance' using org.springframework.security.authorization.AuthenticatedReactiveAuthorizationManager@1ef084ac
+2026-10-31T11:44:12.586+03:00 DEBUG 4149 --- [NoteTaskBackend] [parallel-1] o.s.s.w.s.a.AuthorizationWebFilter       : Authorization successful
+2026-10-31T11:44:13.644+03:00  INFO 4149 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.auth_client.GigaChatAuthClient     : GigaChat token obtained, expires in 1793438054887s
+2026-10-31T11:44:13.645+03:00  INFO 4149 --- [NoteTaskBackend] [reactor-http-epoll-4] o.e.n.t.GigaChatTokenProvider            : GigaChat token cached, expires at 2026-10-31T09:14:14.887Z
