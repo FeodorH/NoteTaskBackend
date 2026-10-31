@@ -34,7 +34,7 @@ public class GigaChatTokenProvider {
 
             Mono<String> fresh = authClient.requestToken()
                     .map(resp -> {
-                        Instant expiresAt = Instant.now().plusSeconds(resp.expiresIn());
+                        Instant expiresAt = Instant.ofEpochMilli(resp.expiresIn());
                         CachedToken cached = new CachedToken(resp.accessToken(), expiresAt);
                         cache.set(cached);
                         inFlight.set(null);

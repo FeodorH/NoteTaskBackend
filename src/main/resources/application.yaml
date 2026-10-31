@@ -24,6 +24,7 @@ gigachat:
   auth-path: /api/v2/oauth
   api-url: https://api.giga.chat
   completion-path: /v1/chat/completions
+  balance-path: /v1/balance
   model: GigaChat-3-Ultra
 
 logging:
